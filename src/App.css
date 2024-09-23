@@ -1,38 +1,174 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
 .App {
   text-align: center;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  height: 2em;
+  width: 2em;
+  margin-right: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-bar {
+  margin-bottom: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+  border-color: #4285f4;
+}
+
+.results-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
+  gap: 15px;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+.image-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+.image-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  height: 200px;
+}
+
+.image-card p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.side-pane {
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.side-pane h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.side-pane img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.side-pane p {
+  font-size: 16px;
+  color: #666;
+}
+
+.side-pane-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #357ae8;
+}
+
+.pagination button:disabled {
+  background-color: #c6d9f1;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #0b66c3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 800px) {
+  /* Change flex direction for mobile */
+  .results-container {
+    flex-direction: column-reverse;  /* Stack search results below the side pane */
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Full-width side pane in mobile */
+  .side-pane {
+    width: 70%;
+    border-left: none;
+    border-top: 1px solid #ddd;
+    position: static;  /* Remove sticky positioning for mobile */
+    margin: 25px;
+  }
+
+  /* Center search input on mobile */
+  .search-bar input {
+    width: 80%;  /* Make search bar slightly larger on mobile */
+  }
+
+  /* Adjust the image results grid for smaller screens */
+  .image-results {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0;
+  }
+
+  .image-card {
+    padding: 5px;
   }
 }
