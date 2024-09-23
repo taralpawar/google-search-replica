@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d8e1b41.css",
+    "main.js": "/static/js/main.96662b97.js",
+    "static/js/453.4611d328.chunk.js": "/static/js/453.4611d328.chunk.js",
+    "static/media/Google__G__logo.svg.png": "/static/media/Google__G__logo.svg.a62f3a81a619ff596786.png",
+    "index.html": "/index.html",
+    "main.4d8e1b41.css.map": "/static/css/main.4d8e1b41.css.map",
+    "main.96662b97.js.map": "/static/js/main.96662b97.js.map",
+    "453.4611d328.chunk.js.map": "/static/js/453.4611d328.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d8e1b41.css",
+    "static/js/main.96662b97.js"
+  ]
+}
